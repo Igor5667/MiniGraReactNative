@@ -1,20 +1,30 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import {StyleSheet, Text, View, ImageBackground } from 'react-native';
+import StartGameScreen from './UI/StartGameScreen';
+import { LinearGradient } from 'expo-linear-gradient';
+
+
 
 export default function App() {
+
+
+
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <LinearGradient colors={['#f8e7ff', '#2bb1b7']} style={styles.mainContainer}>
+      <ImageBackground source={require('./assets/bmw.jpg')}
+                       resizeMode='cover'
+                       style={styles.mainContainer}
+                       imageStyle={{opacity: 0.3}}
+      >
+        <StartGameScreen/>
+      </ImageBackground>
+    </LinearGradient>
+      
   );
 }
 
 const styles = StyleSheet.create({
-  container: {
+  mainContainer: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+  }
+})
